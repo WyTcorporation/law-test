@@ -1,47 +1,45 @@
 # Log Analytics API
 
-## Опис
+## Description
 
-Цей проект реалізує API для аналізу логів, яке дозволяє отримувати кількість записів логів, 
-що відповідають певним критеріям.
+This project implements an API for log analysis, allowing you to retrieve the number of log entries that match certain criteria.
 
-## Вимоги
+## Requirements
 
 - Docker
 - Docker Compose
 
-## Налаштування
+## Setup
 
-1. Клонуйте репозиторій:
+1. Clone the repository:
     ```bash
     git clone <repository-url>
     cd log-analytics-api
     ```
 
-2. Запустіть Docker:
+2. Start Docker:
     ```bash
     docker-compose up --build
     ```
 
-3. Доступ до API буде за адресою:
+3. Access the API at:
     ```
     http://localhost:8000
     ```
 
-## Використання API
+## Using the API
 
-- `GET /count`: Повертає кількість логів, що відповідають критеріям.
-    - Параметри:
-        - `serviceNames` (optional): Масив імен сервісів
-        - `startDate` (optional): Початкова дата у форматі ISO 8601
-        - `endDate` (optional): Кінцева дата у форматі ISO 8601
-        - `statusCode` (optional): Код статусу запиту
+- `GET /count`: Returns the count of logs that match the criteria.
+    - Parameters:
+        - `serviceNames` (optional): Array of service names
+        - `startDate` (optional): Start date in ISO 8601 format
+        - `endDate` (optional): End date in ISO 8601 format
+        - `statusCode` (optional): Request status code
 
-## Тестування
+## Testing
 
-Запустіть тести за допомогою PHPUnit:
+Run tests using PHPUnit:
 
 ```bash
-
 docker-compose exec app php bin/phpunit
-
+```
